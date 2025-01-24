@@ -1,0 +1,16 @@
+// const greet = (name = "Sunny", profession = "programmer") =>
+//   `How are your ${name} and you dream is to be ${profession}`;
+
+// greet();
+
+
+let myCat = {
+  name:"Marshmallow",
+  "color": "white",
+  age:1,
+  isMale:true
+};
+
+console.log(myCat);
+
+console.log("Hello world");
