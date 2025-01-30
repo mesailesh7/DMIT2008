@@ -1,0 +1,18 @@
+{
+  "name": "example2",
+  "version": "1.0.0",
+  "description": "review astronauts goThrough",
+  "main": "./index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Sunny Thapa",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
