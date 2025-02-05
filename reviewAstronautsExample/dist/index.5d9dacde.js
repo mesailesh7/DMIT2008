@@ -657,78 +657,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     await loadAndRenderAstronauts();
 });
 
-},{"bootstrap/dist/css/bootstrap.min.css":"i5LP7","./dom/astronaut":"a988T","./api/astronaut":"j9BdQ"}],"i5LP7":[function() {},{}],"a988T":[function(require,module,exports,__globalThis) {
-/*
-HTML of an astronaut list item.
-replace the instances that have "THIS FORMAT HERE" with the astronautData.
-
-<li href="#" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-        <img src="PROFILE THUMBNAIL HERE" class="rounded float-start" alt=""">
-        <h5 class="mb-1">ASTRONAUT NAME (ASTRONAUT STATUS HERE)</h5>
-        <small class="float-end">born DATE OF BIRTH HERE</small>
-    </div>
-    <small>ASTRONAUT NATIONALITY HERE (ASTRONAUT AGENCY NAME)</small>
-    <p class="mb-1">ASTRONAUT BIO HERE </p>
-</li>
-*/ // I want you create a method called renderAstronaut
-// return the html list item
-// export that function
-// use this function in the index.js
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "renderAstronaut", ()=>renderAstronaut);
-const renderAstronaut = (astronautData)=>{
-    // the astronaut data is the data from
-    // the api, change the capitalize pieces to the data.
-    // we're only going to select the first nationality here.
-    let nationality = astronautData.nationality[0].nationality_name;
-    // as an option above you could essentially map through all of
-    // the nationalities.
-    // let's use some of knowledge
-    let { name, date_of_birth, bio } = astronautData;
-    return `<li href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-          <img src="${astronautData.image.thumbnail_url}" class="rounded float-start" alt=""">
-          <h5 class="mb-1">${name} (${astronautData.status.name})</h5>
-          <small class="float-end">born ${date_of_birth}</small>
-      </div>
-      <small>${nationality} (${astronautData.agency.abbrev})</small>
-      <p class="mb-1">${bio}</p>
-  </li>`;
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports,__globalThis) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"j9BdQ":[function(require,module,exports,__globalThis) {
+},{"bootstrap/dist/css/bootstrap.min.css":"i5LP7","./api/astronaut":"j9BdQ","./dom/astronaut":"a988T"}],"i5LP7":[function() {},{}],"j9BdQ":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // Export the getAstronautList function to be used in other files
@@ -770,6 +699,79 @@ const getAstronautList = async ({ search })=>{
     const data = await response.json();
     // Return the parsed data
     return data;
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"a988T":[function(require,module,exports,__globalThis) {
+/*
+HTML of an astronaut list item.
+replace the instances that have "THIS FORMAT HERE" with the astronautData.
+
+<li href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+        <img src="PROFILE THUMBNAIL HERE" class="rounded float-start" alt=""">
+        <h5 class="mb-1">ASTRONAUT NAME (ASTRONAUT STATUS HERE)</h5>
+        <small class="float-end">born DATE OF BIRTH HERE</small>
+    </div>
+    <small>ASTRONAUT NATIONALITY HERE (ASTRONAUT AGENCY NAME)</small>
+    <p class="mb-1">ASTRONAUT BIO HERE </p>
+</li>
+*/ // I want you create a method called renderAstronaut
+// return the html list item
+// export that function
+// use this function in the index.js
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "renderAstronaut", ()=>renderAstronaut);
+const renderAstronaut = (astronautData)=>{
+    // the astronaut data is the data from
+    // the api, change the capitalize pieces to the data.
+    // we're only going to select the first nationality here.
+    let nationality = astronautData.nationality[0].nationality_name;
+    // as an option above you could essentially map through all of
+    // the nationalities.
+    // let's use some of knowledge
+    let { name, date_of_birth, bio } = astronautData;
+    console.log(astronautData);
+    console.log(nationality);
+    return `<li href="#" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+          <img src="${astronautData.image.thumbnail_url}" class="rounded float-start" alt=""">
+          <h5 class="mb-1">${name} (${astronautData.status.name})</h5>
+          <small class="float-end">born ${date_of_birth}</small>
+      </div>
+      <small>${nationality} (${astronautData.agency.abbrev})</small>
+      <p class="mb-1">${bio}</p>
+  </li>`;
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fSTlA","1Z4Rq"], "1Z4Rq", "parcelRequire94c2")
