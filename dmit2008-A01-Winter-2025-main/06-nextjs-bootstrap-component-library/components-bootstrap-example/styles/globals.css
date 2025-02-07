@@ -1,0 +1,7 @@
+/*
+    A local css file that is
+    imported into the entrypoint
+*/
+body {
+    margin: 0;
+}
