@@ -1,0 +1,46 @@
+// // let fruits = {
+// //     apples: 'Apples',
+// //     blueberries: 'Blueberries',
+// //     grapes: 'Grapes',
+// //     nectarines: 'Nectarines',
+// //     oranges: 'Oranges'
+// // };
+
+
+// // // let (apples, grapes, oranges) = fruits;
+// // // console.log(`${apples}, ${grapes}, and ${oranges}`);
+
+
+// // // let {a, g, o} = fruits;
+// // // console.log(`${a}, ${g}, and ${o}`);
+
+
+// // // let {apples, grapes, oranges} = {fruits};
+// // // console.log(`${apples}, ${grapes}, and ${oranges}`);
+
+
+// // // let {apples: grapes: oranges} = fruits;
+// // // console.log(`${apples}, ${grapes}, and ${oranges}`);
+
+
+// // let {apples, grapes, oranges} = fruits;
+// // console.log(`${apples}, ${grapes}, and ${oranges}`);
+
+// const greeting = (userName) => {
+//     console.log('Hello ' + userName);
+// };
+// // calling the function
+// greeting('Dolly'); // should display 'Hello Dolly'
+
+const URI = 'https://api.freeapi.app/api/v1/public/quotes/quote/random';
+
+const home = async () => {
+  const response = await fetch(URI);
+  if(!response.ok) throw new Error("Failed to load data")
+  const albums = await response.json();
+  console.log(albums)
+  return albums;
+  
+}
+
+home()
